@@ -43,18 +43,49 @@ Method: Post Data : Json
 }
 ```
 
+## Like on post
+
+http://localhost:8080/api/posts/625645a66c5e1a1e84d3de6f/likepost/
+
+```http
+{
+"userId":"62556665f1a99c3b2ca137b7"
+}
+```
+
+## Comment on post
+
+http://localhost:8080/api/posts/62559708c22f6134347d0dd8/comment/
+
+```http
+{
+    "comment":"congratulations",
+    "author":"62556665f1a99c3b2ca137b7"
+}
+```
+
+### Do like on comment
+
+http://localhost:8080/api/posts/comment/62563688d9a0a941d8dd4619/like
+
+```http
+{
+    "userId":"62556635f1a99c3b2ca137b5"
+}
+```
+
 ### Get comments of posts:
 
 http://localhost:8080/api/posts/62559708c22f6134347d0dd8/getcomments
 
 Here 62559708c22f6134347d0dd8 is post id
 
-### get likes of comment
-
-http://localhost:8080/api/posts/comment/62563688d9a0a941d8dd4619/getlikes
-
-### get likes of post
+### Get likes of post
 
 http://localhost:8080/api/posts/62559708c22f6134347d0dd8/getlikes
+
+### Get likes of comment
+
+http://localhost:8080/api/posts/comment/62563688d9a0a941d8dd4619/getlikes
 
 =======
