@@ -1,30 +1,44 @@
-# social-media
+## Social-Media
 
-Backend api for scoial media for create new post, comment on post, like on post, like on comment
+Backend api for scoial media for create new Post, comment on Post, like on Post, like on comment
 
-Register user
+### Register user
+
 http://localhost:8080/api/authsystem/register
-method: post data:json
-{
-"username":"Vishal",
-"firstName":"Vishal",
-"email":"vishal@gmail.com",
-"password":"vishaldesai"
-}
 
-Upload Post
-http://localhost:8080/api/posts/uploadpost
-method: post data:json
-{
-"author":"625517b70dde673bd09eda53",
-"title":"My seconf Post",
-"content":"traveling in mumbai"
-}
+Method: Post Data : Json
 
-get home page posts:
-http://localhost:8080/api/posts/feed
-method: post data:json
-
+```http
 {
-"userId":"62551697714f7c0df848fd68"
+  "username":"Vishal",
+  "firstName":"Vishal",
+  "email":"vishal@gmail.com",
+  "password":"vishaldesai"
 }
+```
+
+### Upload Post
+
+http://localhost:8080/api/Posts/uploadPost
+
+Method: Post Data : Json
+
+```http
+{
+  "author":"625517b70dde673bd09eda53",
+  "title":"My First Post",
+  "content":"traveling in mumbai"
+}
+```
+
+### Get home page Posts:
+
+http://localhost:8080/api/Posts/feed
+
+Method: Post Data : Json
+
+```http
+{
+  "userId":"62551697714f7c0df848fd68"
+}
+```
