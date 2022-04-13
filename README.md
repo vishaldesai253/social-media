@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Social-Media
 
 Backend api for scoial media for create new Post, comment on Post, like on Post, like on comment
@@ -43,6 +42,5 @@ Method: Post Data : Json
   "userId":"62551697714f7c0df848fd68"
 }
 ```
-=======
 
->>>>>>> 5c13dc8451de331ce00469269e6752d8244958dc
+=======
