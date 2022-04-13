@@ -43,4 +43,18 @@ Method: Post Data : Json
 }
 ```
 
+### Get comments of posts:
+
+http://localhost:8080/api/posts/62559708c22f6134347d0dd8/getcomments
+
+Here 62559708c22f6134347d0dd8 is post id
+
+### get likes of comment
+
+http://localhost:8080/api/posts/comment/62563688d9a0a941d8dd4619/getlikes
+
+### get likes of post
+
+http://localhost:8080/api/posts/62559708c22f6134347d0dd8/getlikes
+
 =======
