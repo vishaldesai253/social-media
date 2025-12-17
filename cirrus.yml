@@ -1,0 +1,8 @@
+task:
+  name: macos-simple
+  macos_instance:
+    image: sonoma-xcode-latest
+  script:
+    - sw_vers
+    - xcodebuild -version
+    - echo "Hello from macOS Cirrus task"
