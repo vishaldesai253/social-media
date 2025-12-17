@@ -2,10 +2,8 @@ name: Run Cirrus Tasks
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+  workflow_dispatch:
+  
 jobs:
   cirrus:
     runs-on: ubuntu-latest
