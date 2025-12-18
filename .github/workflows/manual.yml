@@ -1,20 +1,15 @@
-name: Run Cirrus Tasks
+name: Maestro test infra testing and debugging - Run Cirrus Tasks
 
 on:
-  push:
   workflow_dispatch:
   
 jobs:
-  cirrus:
+  cirrus-sample-task:
     runs-on: macos-15
     steps:
-    - uses: actions/checkout@v2
-    - name: Checkout words_backend
-      uses: actions/checkout@v4
-      with:
-        repository: vishaldesai253/words_backend
-        ref: main
-        path: words_backend
+    - run: echo "Maestro test infra testing and debugging - Run Cirrus Tasks"
     - run: pwd
-    - run: cd words_backend
-    - run: pwd
+    - run: ls
+    - run: xcodebuild -version
+    - run: cirrus --version
+    - run: tart --version
