@@ -4,4 +4,5 @@ task:
     image: ghcr.io/cirruslabs/macos-sonoma-xcode:latest
   script:
     - xcodebuild -version
+    - tart list
     - echo "Hello from macOS Cirrus task"
