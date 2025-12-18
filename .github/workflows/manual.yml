@@ -11,5 +11,5 @@ jobs:
     - run: pwd
     - run: ls
     - run: xcodebuild -version
-    - run: cirrus --version
-    - run: tart --version
+    - run: cirrus --version | echo "cirrus is not installed"
+    - run: tart --version | echo "tart is not installed"
