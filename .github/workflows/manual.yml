@@ -7,7 +7,7 @@ jobs:
   cirrus-sample-task:
     runs-on: macos-15
     steps:
-    - run: echo "Maestro test infra testing and debugging - Run Cirrus Tasks"
+    - run: echo "Hello world"
     - run: pwd
     - run: ls
     - run: xcodebuild -version
