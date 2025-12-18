@@ -1,7 +1,7 @@
 name: Maestro test infra testing and debugging - Run Cirrus Tasks
 
 on:
-  pull-requests:
+  pull_request:
   
 jobs:
   cirrus-sample-task:
