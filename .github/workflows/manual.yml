@@ -9,6 +9,10 @@ jobs:
     runs-on: macos-15
     steps:
     - uses: actions/checkout@v2
-    - run: brew install cirruslabs/cli/tart
-    - run: tart clone ghcr.io/cirruslabs/macos-sonoma-xcode:latest macos-sonoma-xcode
-    - uses: cirruslabs/cirrus-action@v2
+    - name: Checkout 
+      uses: actions/checkout@v4
+      with:
+        repository: vishaldesai253/words_backend
+        ref: main
+        path: words_backend
+    - run: ls
