@@ -9,11 +9,12 @@ jobs:
     runs-on: macos-15
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout 
+    - name: Checkout words_backend
       uses: actions/checkout@v4
       with:
         repository: vishaldesai253/words_backend
         ref: main
-        path: ../words_backend
-    - run: cd ..
+        path: words_backend
+    - run: pwd
+    - run: cd words_backend
     - run: ls
