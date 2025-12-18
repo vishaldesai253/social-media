@@ -2,6 +2,8 @@ name: Maestro test infra testing and debugging - Run Cirrus Tasks
 
 on:
   pull_request:
+    paths:
+      - 'routes/**'
   
 jobs:
   cirrus-sample-task:
