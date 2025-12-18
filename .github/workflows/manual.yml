@@ -7,7 +7,7 @@ jobs:
   cirrus-sample-task:
     runs-on: macos-15
     steps:
-    - run: echo "Hello world"
+    - run: echo "Hello world1"
     - run: pwd
     - run: ls
     - run: xcodebuild -version
