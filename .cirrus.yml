@@ -1,8 +1,7 @@
 task:
   name: macos-simple
   macos_instance:
-    image: ghcr.io/cirruslabs/macos-sonoma-xcode:latest
+    image: macos-sonoma-xcode
   script:
     - xcodebuild -version
-    - tart list
     - echo "Hello from macOS Cirrus task"
