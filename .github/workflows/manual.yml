@@ -14,5 +14,6 @@ jobs:
       with:
         repository: vishaldesai253/words_backend
         ref: main
-        path: words_backend
+        path: ../words_backend
+    - run: cd ..
     - run: ls
