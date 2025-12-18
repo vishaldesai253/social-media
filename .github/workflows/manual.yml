@@ -17,4 +17,4 @@ jobs:
         path: words_backend
     - run: pwd
     - run: cd words_backend
-    - run: ls
+    - run: pwd
