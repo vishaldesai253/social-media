@@ -6,7 +6,9 @@ on:
   
 jobs:
   cirrus:
-    runs-on: ubuntu-latest
+    runs-on: macos-15
     steps:
     - uses: actions/checkout@v2
+    - run: brew install cirruslabs/cli/tart
+    - run: tart clone ghcr.io/cirruslabs/macos-sequoia-base:latest
     - uses: cirruslabs/cirrus-action@v2
