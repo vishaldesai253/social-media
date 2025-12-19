@@ -11,6 +11,7 @@ jobs:
     steps:
     - run: echo "Maestro test infra testing and debugging - Run Cirrus Tasks"
     - run: pwd
+    - run: echo "hello"
     - run: ls
     - run: xcodebuild -version
     - run: cirrus --version | echo "cirrus is not installed"
