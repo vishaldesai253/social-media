@@ -1,11 +1,16 @@
-name: Maestro test infra testing and debugging - Run Cirrus Tasks
+name: Matrix Parallel Jobs
 
 on:
   workflow_dispatch:
-  
+
 jobs:
-  cirrus:
-    runs-on: ubuntu-latest
+  tests:
+    runs-on: macos-15
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
-    - uses: actions/checkout@v2
-    - uses: cirruslabs/cirrus-action@v2
+      - name: Run shard ${{ matrix.shard }}
+        run: |
+          echo "Running shard ${{ matrix.shard }}"
+          sleep 10
