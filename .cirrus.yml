@@ -1,7 +1,15 @@
 task:
-  name: macos-simple
+  name: macos-simple1
   macos_instance:
     image: macos-sonoma-xcode
   script:
     - xcodebuild -version
-    - echo "Hello from macOS Cirrus task"
+    - echo "Hello1 from macOS Cirrus task"
+
+task:
+  name: macos-simple2
+  macos_instance:
+    image: macos-sonoma-xcode
+  script:
+    - xcodebuild -version
+    - echo "Hello2 from macOS Cirrus task"

@@ -1,9 +1,7 @@
 name: Maestro test infra testing and debugging - Run Cirrus Tasks
 
 on:
-  pull_request:
-    paths:
-      - 'routes/**'
+  workflow_dispatch:
   
 jobs:
   cirrus-sample-task:
@@ -11,8 +9,3 @@ jobs:
     steps:
     - run: echo "Maestro test infra testing and debugging - Run Cirrus Tasks"
     - run: pwd
-    - run: echo "hello"
-    - run: ls
-    - run: xcodebuild -version
-    - run: cirrus --version | echo "cirrus is not installed"
-    - run: tart --version | echo "tart is not installed"
