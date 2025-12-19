@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   
 jobs:
-  cirrus-sample-task:
-    runs-on: macos-15
+  cirrus:
+    runs-on: ubuntu-latest
     steps:
-    - run: echo "Maestro test infra testing and debugging - Run Cirrus Tasks"
-    - run: pwd
+    - uses: actions/checkout@v2
+    - uses: cirruslabs/cirrus-action@v2
