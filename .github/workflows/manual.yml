@@ -7,10 +7,10 @@ on:
   
 jobs:
   cirrus-sample-task:
-    runs-on: macos-15
+    runs-on: self-hosted
     steps:
-    - run: echo "Maestro test infra testing and debugging - Run Cirrus Tasks"
-    - run: pwd
+    - run: echo "Hello world vishal mac"
+    - run: echo $PATH
     - run: ls
     - run: xcodebuild -version
     - run: cirrus --version | echo "cirrus is not installed"
