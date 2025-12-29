@@ -1,0 +1,71 @@
+name: Parallel Jobs with Depends & Artifacts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # -----------------------------
+  # 1️⃣ Build Job (runs first)
+  # -----------------------------
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build application
+        run: |
+          mkdir -p build
+          echo "Hello from build job" > build/app.txt
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: build/
+
+  # -----------------------------------------
+  # 2️⃣ Test Jobs (run PARALLEL after build)
+  # -----------------------------------------
+  tests:
+    runs-on: macos-15
+    needs: build     # 👈 dependency
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3]
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+
+      - name: Run tests (Shard ${{ matrix.shard }})
+        run: |
+          echo "Running tests for shard ${{ matrix.shard }}" | tee app.txt
+          cat app.txt
+          sleep 10
+
+      - name: Upload test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-result-shard-${{ matrix.shard }}
+          path: .
+          retention-days: 7
+
+  # -----------------------------------
+  # 3️⃣ Final Job (after ALL tests)
+  # -----------------------------------
+  finalize:
+    runs-on: macos-15
+    needs: tests     # 👈 waits for ALL shards
+    steps:
+      - name: Download all test artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Print summary
+        run: |
+          echo "All parallel tests finished"
+          echo "Artifacts downloaded:"
+          ls -R
