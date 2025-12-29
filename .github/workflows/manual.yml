@@ -23,6 +23,6 @@ jobs:
       - run: ls
       - name: Checkout current
         uses: actions/checkout@v4
-      - cd ../words_backend
+      - run: cd ../words_backend
       - run: pwd
       - run: ls
