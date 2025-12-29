@@ -13,8 +13,6 @@ jobs:
           node-version: 22
       - name: Verify Node
         run: node -v
-      - name: Checkout current
-        uses: actions/checkout@v4
       - name: Checkout org shared repo
         uses: actions/checkout@v4
         with:
