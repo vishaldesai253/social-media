@@ -7,13 +7,10 @@ jobs:
   build:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
       - name: Verify Node
         run: node -v
       - name: Checkout org shared repo
@@ -21,3 +18,6 @@ jobs:
         with:
           repository: vishaldesai253/words_backend
           path: words_backend
+      - name: current dir
+        run: pwd
+      - run: ls
