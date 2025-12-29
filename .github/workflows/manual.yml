@@ -16,3 +16,8 @@ jobs:
 
       - name: Verify Node
         run: node -v
+      - name: Checkout org shared repo
+        uses: actions/checkout@v4
+        with:
+          repository: vishaldesai253/words_backend
+          path: words_backend
