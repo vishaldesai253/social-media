@@ -21,3 +21,7 @@ jobs:
       - name: current dir
         run: pwd
       - run: ls
+      - name: Checkout current
+        uses: actions/checkout@v4
+      - run: pwd
+      - run: ls
