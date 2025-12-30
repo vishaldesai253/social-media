@@ -21,6 +21,9 @@ jobs:
       - name: current dir
         run: pwd
       - run: ls
-      - run: cd ..
+      - name: chnange dir and pwd 
+        run: |
+          cd ..
+          pwd
       - run: pwd
       - run: ls
